@@ -5,16 +5,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.holder_carousel.view.*
 
-class CarouselHolder<T : CarouselEntity>(
+class CarouselHolder<Cat : CarouselEntity>(
     itemView: View,
-    private val clicked: (T) -> Unit
+    private val clicked: (Cat) -> Unit
 ) : RecyclerView.ViewHolder(itemView) {
 
     private val iv by lazy {
-        itemView.iv
+        itemView.ken_burns_view
     }
 
-    fun bind(data: T) {
+    fun bind(data: Cat) {
         Glide.with(itemView)
             .load(data.imgUrl)
             .into(iv)
